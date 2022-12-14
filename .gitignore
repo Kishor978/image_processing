@@ -1,3 +1,5 @@
 
 \tempCodeRunnerFile.py
 *.jpg
+*.png
+__pycache__/
