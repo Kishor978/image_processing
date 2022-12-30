@@ -4,4 +4,6 @@
 *.png
 __pycache__/
 image/
+new/
 Scratch_assay/
+\to_gray.py
