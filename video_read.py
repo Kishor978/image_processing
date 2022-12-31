@@ -10,7 +10,7 @@ while True:
     k=cv2.waitKey(25)& 0xFF         #mask=0xFF
     if k==ord("q"):
         break
-video.relese()
+video.release()
 cv2.destroyAllWindows()
 
 
