@@ -33,7 +33,7 @@ while True:
     # dicsplay fps (fimle_name,fps,position,font,scale,color,thickness)
     cv2.imshow("Image",img)
     kwy=cv2.waitKey(1) & 0xFF  
-    if kwy==27 ==ord('q'):
+    if kwy ==ord('q'):
         break
 webcam.release()
 cv2.destroyAllWindows()

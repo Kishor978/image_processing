@@ -5,7 +5,7 @@ import numpy as np
 #create resolution
 rs=p.size()
 fn=input("Enter file name and path to store: ")
-fps=60.0        #frame rate
+fps=24.0        #frame rate
 fourcc=cv2.VideoWriter_fourcc(*"XVID")  #video ofrmat
 output=cv2.VideoWriter(fn,fourcc,fps,rs) #path,codec,frame persec,screenresolution
 

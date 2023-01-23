@@ -8,3 +8,9 @@ new/
 Scratch_assay/
 \to_gray.py
 *.avi
+pose/
+disease/
+*/hand_trackinhg_module.py
+*/poseEstimation.py
+*/posemodule.py
+*/volume_control.py
