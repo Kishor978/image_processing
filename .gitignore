@@ -10,7 +10,7 @@ Scratch_assay/
 *.avi
 pose/
 disease/
-*/hand_trackinhg_module.py
+
 */poseEstimation.py
 */posemodule.py
 */volume_control.py
