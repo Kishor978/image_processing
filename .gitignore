@@ -11,6 +11,6 @@ Scratch_assay/
 pose/
 disease/
 
-*/poseEstimation.py
+
 */posemodule.py
 */volume_control.py
