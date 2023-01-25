@@ -3,7 +3,6 @@ import time
 import os
 import hand_tracking_module as htm
 
-
 width, height = 640, 480
 
 cap = cv2.VideoCapture(0)
@@ -33,22 +32,19 @@ while True:
     if len(lmList) != 0:
         fingers = []
         # for thumb
-        
         if lmList[tipsId[0]][2] < lmList[tipsId[0]-1][2]:
             fingers.append(1)
         else:
             fingers.append(0)
-
-        #for other fingers
+        # for other fingers
         for id in range(1, 5):
             if lmList[tipsId[id]][2] < lmList[tipsId[id]-2][2]:
                 fingers.append(1)
             else:
                 fingers.append(0)
-            #print(fingers)
-        totalFingers=fingers.count(1)
+            # print(fingers)
+        totalFingers = fingers.count(1)
         print(totalFingers)
-
         # overlaying image
         h, w, c = overlayList[totalFingers-1].shape
         img[0:h, 0:w] = overlayList[totalFingers-1]

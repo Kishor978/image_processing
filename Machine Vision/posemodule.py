@@ -3,12 +3,13 @@ import mediapipe as mp
 import time
 
 class poseDetector():
-    def __init__(self,mode=False,
-                 upBody=False,
+    def __init__(self,mode=False,model_complexity=1,
                  smooth=True,
+                 upBody=False,
                  detection_confidence=0.5,
                  tracking_confidence=0.5):
         self.mode=mode
+        self.model_complexity=model_complexity
         self.upBody=upBody
         self.smooth=smooth
         self.detection_confidence=detection_confidence
@@ -16,7 +17,7 @@ class poseDetector():
 
         self.mpDraw=mp.solutions.drawing_utils
         self.mpPose=mp.solutions.pose
-        self.pose=self.mpPose.Pose(self.mode,self.upBody,self.smooth,
+        self.pose=self.mpPose.Pose(self.mode,self.upBody,self.model_complexity,self.smooth,
                                    self.detection_confidence,
                                    self.tracking_confidence)
     def findPose(self,img,draw=True):

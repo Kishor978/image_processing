@@ -9,6 +9,7 @@ Scratch_assay/
 \to_gray.py
 *.avi
 pose/
+.idea/
 disease/
 
 
