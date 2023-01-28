@@ -44,7 +44,7 @@ while True:
     lmList = detector.findPosition(img, draw=False)
     if len(lmList) != 0:
         # print(lmList)
-        
+
         x1, y1 = lmList[8][1:]  # tip of index finger=8
         x2, y2 = lmList[12][1:]  # tip of middle finger = 12
 
@@ -99,7 +99,7 @@ while True:
     img[0:168, 0:1280] = header  # setting the header image
     # img=cv2.addWeighted(img,0.5,imgCanvas,0.5,0)   #merging images
     cv2.imshow("image", img)
-    cv2.imshow("Canvas", imgCanvas)
+    # cv2.imshow("Canvas", imgCanvas)
     key = cv2.waitKey(1) & 0xFF
     if key == ord('q'):
         break

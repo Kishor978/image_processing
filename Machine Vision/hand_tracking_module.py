@@ -1,19 +1,20 @@
 import cv2
 import mediapipe as mp
 import time
+
+
 class HandDetector():
-    def __init__(self, mode=False, maxHands=2,modelC=1, detectionCon=0.5, trackCon=0.5):
+    def __init__(self, mode=False, maxHands=2, modelC=1, detectionCon=0.5, trackCon=0.5):
         self.mode = mode
         self.maxHands = maxHands
-        self.modelC=modelC
+        self.modelC = modelC
         self.detectionCon = detectionCon
         self.trackCon = trackCon
         self.mpHands = mp.solutions.hands
-        self.hands = self.mpHands.Hands(self.mode, self.maxHands,self.modelC,
+        self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.modelC,
                                         self.detectionCon, self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
         self.tipsId = [4, 8, 12, 16, 20]
-
 
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -25,6 +26,7 @@ class HandDetector():
                     self.mpDraw.draw_landmarks(img, handLms,
                                                self.mpHands.HAND_CONNECTIONS)
         return img
+
     def findPosition(self, img, handNo=0, draw=True):
         self.lmList = []
         if self.results.multi_hand_landmarks:
@@ -38,7 +40,7 @@ class HandDetector():
                 if draw:
                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
         return self.lmList
-    
+
     def fingersUp(self):
         fingers = []
         # for thumb
@@ -73,5 +75,7 @@ def main():
                     (255, 0, 255), 3)
         cv2.imshow("Image", img)
         cv2.waitKey(1)
+
+
 if __name__ == "__main__":
     main()
