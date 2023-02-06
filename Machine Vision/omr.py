@@ -3,12 +3,13 @@ import mediapipe
 import numpy as np
 import cvzone
 
-cap=cv2.VideoCapture(0)
-while True:
-    success,img=cap.read()
+path=""
+width=680
+height=700
 
-    cv2.imshow("Image", img)
-    kwy = cv2.waitKey(1) & 0xFF
-    if kwy == ord('q'):
-        break
+img=cv2.imread(path)
+cv2.imshow("Image", img)
+kwy = cv2.waitKey(1) & 0xFF
+if kwy == ord('q'):
+    break
 cv2.destroyAllWindows()
